@@ -1,0 +1,47 @@
+{# Plantilla de nuestra aplicacion #}
+{% extends 'base.html.twig' %}
+{% block titulo %}
+ISFD Tobar Garcia - Ubicación
+{% endblock %}
+{# contenido #}
+{% block body %}
+<!-- Page Content -->
+<div class="container">
+  <!-- Page Heading/Breadcrumbs -->
+  <h1 class="mt-4 mb-3">ISFD Tobar Garcia
+    <small>Ubicación</small>
+  </h1>
+  <!-- Content Row -->
+  <div class="row">
+    <!-- Map Column -->
+    <div class="col-lg-8 mb-4">
+      <!-- Embedded Google Map -->
+    <!--  <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>-->
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4775.096614978201!2d-66.84877828725817!3d-29.415867576949207!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8c03e308d121f42e!2sInstituto+Superior+Carolina+Tobar+Garc%C3%ADa!5e0!3m2!1ses-419!2sar!4v1565545741380!5m2!1ses-419!2sar" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+    </div>
+    <!-- Contact Details Column -->
+    <div class="col-lg-4 mb-4">
+      <h3>Detalle de Contacto</h3>
+      <p>
+        Pasaje Rioja B° Ferroviario
+        <br>paralelo a Avd. Facundo Quiroga.
+        <br>
+      </p>
+      <p>
+        Telefono: 03804-439375
+      </p>
+      <p>
+        Email:
+        <a href="mailto:isfdeetobargarcia@hotmail.com">isfdeetobargarcia@hotmail.com
+        </a>
+      </p>
+      <p>
+        Horarios: 8 a 12 hs y 17 a 21 hs.
+      </p>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{# Plantilla de nuestra aplicacion #}
+{% extends 'base.html.twig' %}
+{% block titulo %}
+ISFD Tobar Garcia - Nosotros
+{% endblock %}
+{# contenido #}
+{% block body %}
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Page Heading/Breadcrumbs -->
+  <h1 class="mt-4 mb-3">ISFD Tobar Garcia
+    <small>Nosotros</small>
+  </h1>
+  <!-- Image Header -->
+    <img class="img-fluid rounded mb-4" src="{{ asset('img/nosotros1.png') }}" alt="">
+    <!-- Marketing Icons Section -->
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">Dirección</h4>
+          <div class="card-body">
+            <p class="card-text">Pasaje Rioja B° Ferroviario paralelo a Avd. Facundo Quiroga.</p>
+          </div>
+          
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">Contacto</h4>
+          <div class="card-body">
+            <p class="card-text">email: isfdeetobargarcia@hotmail.com </p>
+            <p class="card-text">Telefono: 03804-439375</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">Horarios</h4>
+          <div class="card-body">
+            <p class="card-text"> 8 a 12 hs y 17 a 21 hs.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+{% endblock %}
