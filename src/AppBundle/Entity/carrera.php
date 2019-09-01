@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * carrera
@@ -48,6 +49,22 @@ class carrera
      * @ORM\Column(name="orden", type="integer")
      */
     private $orden;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Establecimiento", inversedBy="carreras")
+     * @ORM\JoinColumn(name="fk_establecimiento_id", referencedColumnName="id")
+     */
+    private $establecimientos;
+
+    /**
+    * @ORM\OneToMany(targetEntity="Alumno", mappedBy="carrera")
+    */
+    private $alumnos;
+
+    public function __construct()
+     {
+        $this->$alumnos = new ArrayCollection();
+     }
 
 
     /**

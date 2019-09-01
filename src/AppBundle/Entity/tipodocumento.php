@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * tipodocumento
@@ -41,6 +42,16 @@ class tipodocumento
      * @ORM\Column(name="orden", type="integer")
      */
     private $orden;
+
+    /**
+    * @ORM\OneToMany(targetEntity="Alumno", mappedBy="tipodocumento")
+    */
+    private $alumnos;
+
+    public function __construct()
+     {
+        $this->$alumnos = new ArrayCollection();
+     }
 
 
     /**
@@ -125,4 +136,3 @@ class tipodocumento
         return $this->orden;
     }
 }
-

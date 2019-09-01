@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * estadosalumnos
@@ -27,6 +28,16 @@ class estadosalumnos
      * @ORM\Column(name="nombre", type="string", length=128)
      */
     private $nombre;
+
+    /**
+   * @ORM\OneToMany(targetEntity="Alumno", mappedBy="estadosalumnos")
+   */
+  private $alumnos;
+
+  public function __construct()
+ {
+     $this->$alumnos = new ArrayCollection();
+ }
 
 
     /**
@@ -63,4 +74,3 @@ class estadosalumnos
         return $this->nombre;
     }
 }
-

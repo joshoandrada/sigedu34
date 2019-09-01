@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * establecimiento
@@ -114,6 +115,28 @@ class establecimiento
      * @ORM\JoinColumn(name="fk_provincia_id", referencedColumnName="id")
      */
     private $provincia;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Alumno", mappedBy="establecimientos")
+     */
+    private $alumnos;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Carrera", mappedBy="establecimientos")
+     */
+    private $carreras;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Concepto", mappedBy="establecimientos")
+     */
+    private $conceptos;
+
+    public function __construct()
+    {
+       $this->$alumnos = new ArrayCollection();
+       $this->$carreras = new ArrayCollection();
+       $this->$conceptos = new ArrayCollection();
+    }
 
 
     /**

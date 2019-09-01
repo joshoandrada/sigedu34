@@ -153,6 +153,42 @@ class alumno
      */
     private $provincia;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Establecimiento", inversedBy="alumnos")
+     * @ORM\JoinColumn(name="fk_establecimiento_id", referencedColumnName="id")
+     */
+    private $establecimientos;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="carrera", inversedBy="alumnos")
+     * @ORM\JoinColumn(name="fk_carrera_id", referencedColumnName="id")
+     */
+    private $carrera;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="estadosalumnos", inversedBy="alumnos")
+     * @ORM\JoinColumn(name="fk_estadoalumno_id", referencedColumnName="id")
+     */
+    private $estadosalumnos;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="pais", inversedBy="alumnos")
+     * @ORM\JoinColumn(name="fk_pais_id", referencedColumnName="id")
+     */
+    private $pais;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="concepto", inversedBy="alumnos")
+     * @ORM\JoinColumn(name="fk_conceptobaja_id", referencedColumnName="id")
+     */
+    private $conceptob;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="tipodocumento", inversedBy="alumnos")
+     * @ORM\JoinColumn(name="fk_tipodocumento_id", referencedColumnName="id")
+     */
+    private $tipodocumento;
+
 
     /**
      * Get id

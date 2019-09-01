@@ -44,14 +44,14 @@ class pais
     private $orden;
 
     /**
-     * @ORM\OneToMany(targetEntity="Provincia", mappedBy="pais")
+     * @ORM\OneToMany(targetEntity="Pais", mappedBy="alumnos")
      */
-    private $provincias;
+    private $pais;
 
     public function __construct()
-   {
-       $this->$provincias = new ArrayCollection();
-   }
+     {
+        $this->$pais = new ArrayCollection();
+     }
 
     /**
      * Get id
