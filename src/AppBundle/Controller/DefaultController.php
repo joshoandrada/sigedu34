@@ -5,6 +5,8 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+//use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+//use AppBundle\Entity\alumno;
 
 class DefaultController extends Controller
 {
@@ -14,7 +16,11 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         // replace this example code with whatever you need
-        return $this->render('frontal/index.html.twig');
+        // capturar el repositorio de la Tabla contra la BD
+      //$alumnoRepository = $this -> getDoctrine() -> getRepository ( alumno::class ) ;
+      //$alumnos = $alumnoRepository->findAll();
+      //return $this->render('frontal/index.html.twig',array('alumnos'=>$alumnos));
+      return $this->render('frontal/index.html.twig');
         // , [ 'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, ]
     }
     /**

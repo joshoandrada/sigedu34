@@ -37,7 +37,7 @@ class niveltipo
     private $descripcion;
 
     /**
-     * @ORM\OneToMany(targetEntity="Establecimiento", mappedBy="niveltipo")
+     * @ORM\OneToMany(targetEntity="establecimiento", mappedBy="niveltipo")
      */
     private $establecimientos;
 

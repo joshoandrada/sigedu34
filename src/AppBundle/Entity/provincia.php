@@ -55,7 +55,7 @@ class provincia
     private $alumnos;
 
      /**
-    * @ORM\OneToMany(targetEntity="Establecimiento", mappedBy="provincia")
+    * @ORM\OneToMany(targetEntity="establecimiento", mappedBy="provincia")
     */
    private $establecimientos;
 

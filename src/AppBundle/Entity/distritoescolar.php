@@ -51,7 +51,7 @@ class distritoescolar
     private $ciudad;
 
     /**
-     * @ORM\OneToMany(targetEntity="Establecimiento", mappedBy="distritoescolar")
+     * @ORM\OneToMany(targetEntity="establecimiento", mappedBy="distritoescolar")
      */
     private $establecimientos;
 

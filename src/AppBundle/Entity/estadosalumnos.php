@@ -30,7 +30,7 @@ class estadosalumnos
     private $nombre;
 
     /**
-   * @ORM\OneToMany(targetEntity="Alumno", mappedBy="estadosalumnos")
+   * @ORM\OneToMany(targetEntity="alumno", mappedBy="estadosalumnos")
    */
   private $alumnos;
 

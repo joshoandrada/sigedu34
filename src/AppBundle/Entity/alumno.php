@@ -148,13 +148,13 @@ class alumno
     private $adeuda;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Provincia", inversedBy="alumnos")
+     * @ORM\ManyToOne(targetEntity="provincia", inversedBy="alumnos")
      * @ORM\JoinColumn(name="fk_provincia_id", referencedColumnName="id")
      */
     private $provincia;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Establecimiento", inversedBy="alumnos")
+     * @ORM\ManyToOne(targetEntity="establecimiento", inversedBy="alumnos")
      * @ORM\JoinColumn(name="fk_establecimiento_id", referencedColumnName="id")
      */
     private $establecimientos;

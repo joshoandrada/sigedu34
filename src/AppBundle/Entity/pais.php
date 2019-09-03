@@ -44,7 +44,7 @@ class pais
     private $orden;
 
     /**
-     * @ORM\OneToMany(targetEntity="Pais", mappedBy="alumnos")
+     * @ORM\OneToMany(targetEntity="pais", mappedBy="alumnos")
      */
     private $pais;
 

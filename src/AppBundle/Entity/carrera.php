@@ -51,13 +51,13 @@ class carrera
     private $orden;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Establecimiento", inversedBy="carreras")
+     * @ORM\ManyToOne(targetEntity="establecimiento", inversedBy="carreras")
      * @ORM\JoinColumn(name="fk_establecimiento_id", referencedColumnName="id")
      */
     private $establecimientos;
 
     /**
-    * @ORM\OneToMany(targetEntity="Alumno", mappedBy="carrera")
+    * @ORM\OneToMany(targetEntity="alumno", mappedBy="carrera")
     */
     private $alumnos;
 

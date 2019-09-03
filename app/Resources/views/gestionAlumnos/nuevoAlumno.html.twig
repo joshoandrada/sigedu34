@@ -1,0 +1,11 @@
+{# Plantilla de nuestra aplicacion #}
+{% extends 'base.html.twig' %}
+{% block titulo %}
+Inscripcion Alumno
+{% endblock %}
+{# contenido #}
+{% block body %}
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+{% endblock %}

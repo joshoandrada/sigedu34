@@ -79,7 +79,7 @@ class organizacion
     private $telefono;
 
     /**
-     * @ORM\OneToMany(targetEntity="Establecimiento", mappedBy="organizacion")
+     * @ORM\OneToMany(targetEntity="establecimiento", mappedBy="organizacion")
      */
     private $establecimientos;
 

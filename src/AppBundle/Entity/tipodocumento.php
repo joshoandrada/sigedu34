@@ -44,7 +44,7 @@ class tipodocumento
     private $orden;
 
     /**
-    * @ORM\OneToMany(targetEntity="Alumno", mappedBy="tipodocumento")
+    * @ORM\OneToMany(targetEntity="alumno", mappedBy="tipodocumento")
     */
     private $alumnos;
 

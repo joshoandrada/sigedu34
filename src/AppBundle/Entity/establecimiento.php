@@ -93,41 +93,41 @@ class establecimiento
     private $rector;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Distritoescolar", inversedBy="establecimientos")
+     * @ORM\ManyToOne(targetEntity="distritoescolar", inversedBy="establecimientos")
      * @ORM\JoinColumn(name="fk_distritoescolar_id", referencedColumnName="id")
      */
     private $distritoescolar;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Organizacion", inversedBy="establecimientos")
+     * @ORM\ManyToOne(targetEntity="organizacion", inversedBy="establecimientos")
      * @ORM\JoinColumn(name="fk_organizacion_id", referencedColumnName="id")
      */
     private $organizacion;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Niveltipo", inversedBy="establecimientos")
+     * @ORM\ManyToOne(targetEntity="niveltipo", inversedBy="establecimientos")
      * @ORM\JoinColumn(name="fk_niveltipo_id", referencedColumnName="id")
      */
     private $niveltipo;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Provincia", inversedBy="establecimientos")
+     * @ORM\ManyToOne(targetEntity="provincia", inversedBy="establecimientos")
      * @ORM\JoinColumn(name="fk_provincia_id", referencedColumnName="id")
      */
     private $provincia;
 
     /**
-     * @ORM\OneToMany(targetEntity="Alumno", mappedBy="establecimientos")
+     * @ORM\OneToMany(targetEntity="alumno", mappedBy="establecimientos")
      */
     private $alumnos;
 
     /**
-     * @ORM\OneToMany(targetEntity="Carrera", mappedBy="establecimientos")
+     * @ORM\OneToMany(targetEntity="carrera", mappedBy="establecimientos")
      */
     private $carreras;
 
     /**
-     * @ORM\OneToMany(targetEntity="Concepto", mappedBy="establecimientos")
+     * @ORM\OneToMany(targetEntity="concepto", mappedBy="establecimientos")
      */
     private $conceptos;
 

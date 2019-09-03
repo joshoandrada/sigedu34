@@ -36,13 +36,13 @@ class concepto
     private $descripcion;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Establecimiento", inversedBy="conceptos")
+     * @ORM\ManyToOne(targetEntity="establecimiento", inversedBy="conceptos")
      * @ORM\JoinColumn(name="fk_establecimiento_id", referencedColumnName="id")
      */
     private $establecimientos;
 
     /**
-    * @ORM\OneToMany(targetEntity="Alumno", mappedBy="conceptob")
+    * @ORM\OneToMany(targetEntity="alumno", mappedBy="conceptob")
     */
     private $alumno;
 
