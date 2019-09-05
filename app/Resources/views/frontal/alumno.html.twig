@@ -1,0 +1,27 @@
+{# Plantilla de nuestra aplicacion #}
+{% extends 'base.html.twig' %}
+{% block titulo %}
+ISFD Tobar Garcia - Datos alumno
+{% endblock %}
+{# contenido #}
+{% block body %}
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Page Heading/Breadcrumbs -->
+  <h1 class="mt-4 mb-3">Datos Alumno
+    <small>Inscripción</small>
+  </h1>
+
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active">Se cargaron Correctamente !!!</li>
+  </ol>
+  <div class="col-md-4">
+    <h6 class="card-subtitle mb-2 text-muted">Nombre</h6>
+    <p>Juan Pablo Carrizo</p>
+    <h6 class="card-subtitle mb-2 text-muted">DNI</h6>
+    <p>34567231</p>
+  </div>
+</div>
+<!-- /.container -->
+{% endblock %}

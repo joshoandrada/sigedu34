@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * niveltipo
+ * tipoiva
  *
- * @ORM\Table(name="niveltipo")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\niveltipoRepository")
+ * @ORM\Table(name="tipoiva")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\tipoivaRepository")
  */
-class niveltipo
+class tipoiva
 {
     /**
      * @var int
@@ -37,15 +37,21 @@ class niveltipo
     private $descripcion;
 
     /**
-     * @ORM\OneToMany(targetEntity="establecimiento", mappedBy="niveltipo")
+     * @var int
+     *
+     * @ORM\Column(name="orden", type="integer")
      */
-    private $establecimientos;
+    private $orden;
+
+    /**
+     * @ORM\OneToMany(targetEntity="organizacion", mappedBy="tipoiva")
+     */
+    private $organizacion;
 
     public function __construct()
-    {
-       $this->$establecimientos = new ArrayCollection();
-    }
-
+     {
+       $this->$organizacion = new ArrayCollection();
+     }
 
     /**
      * Get id
@@ -62,7 +68,7 @@ class niveltipo
      *
      * @param string $nombre
      *
-     * @return niveltipo
+     * @return tipoiva
      */
     public function setNombre($nombre)
     {
@@ -86,7 +92,7 @@ class niveltipo
      *
      * @param string $descripcion
      *
-     * @return niveltipo
+     * @return tipoiva
      */
     public function setDescripcion($descripcion)
     {
@@ -106,36 +112,26 @@ class niveltipo
     }
 
     /**
-     * Add establecimiento
+     * Set orden
      *
-     * @param \AppBundle\Entity\establecimiento $establecimiento
+     * @param integer $orden
      *
-     * @return niveltipo
+     * @return tipoiva
      */
-    public function addEstablecimiento(\AppBundle\Entity\establecimiento $establecimiento)
+    public function setOrden($orden)
     {
-        $this->establecimientos[] = $establecimiento;
+        $this->orden = $orden;
 
         return $this;
     }
 
     /**
-     * Remove establecimiento
+     * Get orden
      *
-     * @param \AppBundle\Entity\establecimiento $establecimiento
+     * @return int
      */
-    public function removeEstablecimiento(\AppBundle\Entity\establecimiento $establecimiento)
+    public function getOrden()
     {
-        $this->establecimientos->removeElement($establecimiento);
-    }
-
-    /**
-     * Get establecimientos
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getEstablecimientos()
-    {
-        return $this->establecimientos;
+        return $this->orden;
     }
 }

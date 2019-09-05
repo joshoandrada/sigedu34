@@ -109,4 +109,67 @@ class concepto
     {
         return $this->descripcion;
     }
+
+    /**
+     * Set establecimientos
+     *
+     * @param \AppBundle\Entity\establecimiento $establecimientos
+     *
+     * @return concepto
+     */
+    public function setEstablecimientos(\AppBundle\Entity\establecimiento $establecimientos = null)
+    {
+        $this->establecimientos = $establecimientos;
+
+        return $this;
+    }
+
+    /**
+     * Get establecimientos
+     *
+     * @return \AppBundle\Entity\establecimiento
+     */
+    public function getEstablecimientos()
+    {
+        return $this->establecimientos;
+    }
+
+    /**
+     * Add alumno
+     *
+     * @param \AppBundle\Entity\alumno $alumno
+     *
+     * @return concepto
+     */
+    public function addAlumno(\AppBundle\Entity\alumno $alumno)
+    {
+        $this->alumno[] = $alumno;
+
+        return $this;
+    }
+
+    /**
+     * Remove alumno
+     *
+     * @param \AppBundle\Entity\alumno $alumno
+     */
+    public function removeAlumno(\AppBundle\Entity\alumno $alumno)
+    {
+        $this->alumno->removeElement($alumno);
+    }
+
+    /**
+     * Get alumno
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAlumno()
+    {
+        return $this->alumno;
+    }
+
+    public function __toString()
+    {
+       return $this->nombre;
+    }
 }

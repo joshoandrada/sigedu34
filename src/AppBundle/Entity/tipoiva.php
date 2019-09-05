@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * tipoiva
@@ -42,6 +43,15 @@ class tipoiva
      */
     private $orden;
 
+    /**
+     * @ORM\OneToMany(targetEntity="organizacion", mappedBy="tipoiva")
+     */
+    private $organizacion;
+
+    public function __construct()
+     {
+       $this->$organizacion = new ArrayCollection();
+     }
 
     /**
      * Get id
@@ -124,5 +134,38 @@ class tipoiva
     {
         return $this->orden;
     }
-}
 
+    /**
+     * Add organizacion
+     *
+     * @param \AppBundle\Entity\organizacion $organizacion
+     *
+     * @return tipoiva
+     */
+    public function addOrganizacion(\AppBundle\Entity\organizacion $organizacion)
+    {
+        $this->organizacion[] = $organizacion;
+
+        return $this;
+    }
+
+    /**
+     * Remove organizacion
+     *
+     * @param \AppBundle\Entity\organizacion $organizacion
+     */
+    public function removeOrganizacion(\AppBundle\Entity\organizacion $organizacion)
+    {
+        $this->organizacion->removeElement($organizacion);
+    }
+
+    /**
+     * Get organizacion
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOrganizacion()
+    {
+        return $this->organizacion;
+    }
+}

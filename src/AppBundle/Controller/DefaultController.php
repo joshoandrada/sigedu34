@@ -41,6 +41,22 @@ class DefaultController extends Controller
         return $this->render('frontal/ubicacion.html.twig');
         // , [ 'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, ]
     }
+    /**
+     * @Route("/alumno/{id}", name="alumno")
+     */
+    public function alumnoAction(Request $request,$id=null)
+    {
+
+        if($id!=null){
+          $alumnoRepository=$this-getDoctrine()->getRepository(alumno::class);
+          $alumno =$alumnoRepository->find($id);
+          return $this->render('frontal/alumno.html.twig',array("alumno"=>$alumno));
+        }
+        else {
+          return $this->render('frontal/alumno.html.twig');
+        }
+        // , [ 'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, ]
+    }
 
 
 }

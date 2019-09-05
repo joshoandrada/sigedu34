@@ -135,4 +135,43 @@ class tipodocumento
     {
         return $this->orden;
     }
+
+    /**
+     * Add alumno
+     *
+     * @param \AppBundle\Entity\alumno $alumno
+     *
+     * @return tipodocumento
+     */
+    public function addAlumno(\AppBundle\Entity\alumno $alumno)
+    {
+        $this->alumnos[] = $alumno;
+
+        return $this;
+    }
+
+    /**
+     * Remove alumno
+     *
+     * @param \AppBundle\Entity\alumno $alumno
+     */
+    public function removeAlumno(\AppBundle\Entity\alumno $alumno)
+    {
+        $this->alumnos->removeElement($alumno);
+    }
+
+    /**
+     * Get alumnos
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAlumnos()
+    {
+        return $this->alumnos;
+    }
+
+    public function __toString()
+    {
+       return $this->nombre;
+    }
 }

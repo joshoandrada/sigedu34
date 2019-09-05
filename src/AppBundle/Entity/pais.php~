@@ -134,43 +134,4 @@ class pais
     {
         return $this->orden;
     }
-
-    /**
-     * Add pai
-     *
-     * @param \AppBundle\Entity\pais $pai
-     *
-     * @return pais
-     */
-    public function addPai(\AppBundle\Entity\pais $pai)
-    {
-        $this->pais[] = $pai;
-
-        return $this;
-    }
-
-    /**
-     * Remove pai
-     *
-     * @param \AppBundle\Entity\pais $pai
-     */
-    public function removePai(\AppBundle\Entity\pais $pai)
-    {
-        $this->pais->removeElement($pai);
-    }
-
-    /**
-     * Get pais
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPais()
-    {
-        return $this->pais;
-    }
-
-    public function __toString()
-    {
-       return $this->nombreLargo;
-    }
 }
