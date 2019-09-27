@@ -189,6 +189,10 @@ class alumno
      */
     private $tipodocumento;
 
+    /**
+     * @ORM\OneToMany(targetEntity="usuariot", mappedBy="alumno")
+     */
+    private $usuariot;
 
     /**
      * Get id
@@ -798,5 +802,46 @@ class alumno
     public function getTipodocumento()
     {
         return $this->tipodocumento;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->usuariot = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add usuariot
+     *
+     * @param \AppBundle\Entity\usuariot $usuariot
+     *
+     * @return alumno
+     */
+    public function addUsuariot(\AppBundle\Entity\usuariot $usuariot)
+    {
+        $this->usuariot[] = $usuariot;
+
+        return $this;
+    }
+
+    /**
+     * Remove usuariot
+     *
+     * @param \AppBundle\Entity\usuariot $usuariot
+     */
+    public function removeUsuariot(\AppBundle\Entity\usuariot $usuariot)
+    {
+        $this->usuariot->removeElement($usuariot);
+    }
+
+    /**
+     * Get usuariot
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsuariot()
+    {
+        return $this->usuariot;
     }
 }

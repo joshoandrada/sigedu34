@@ -26,45 +26,36 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ path('ubicacion') }}">Ubicación</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Sigedu
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-            <a class="dropdown-item" href="#">Mis Datos Personales</a>
-            <a class="dropdown-item" href="#">Datos de Seguridad</a>
-            <a class="dropdown-item" href="#">Cursar Materias</a>
-            <a class="dropdown-item" href="#">Rendir Materias</a>
-            <a class="dropdown-item" href="#">Ficha Académica</a>
-            <a class="dropdown-item" href="#">Estado Académico</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Blog
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-            <a class="dropdown-item" href="#">Blog Home 1</a>
-            <a class="dropdown-item" href="#">Blog Home 2</a>
-            <a class="dropdown-item" href="#">Blog Post</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Otras Páginas
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-            <a class="dropdown-item" href="#">Full Width Page</a>
-            <a class="dropdown-item" href="#">Sidebar Page</a>
-            <a class="dropdown-item" href="#">FAQ</a>
-            <a class="dropdown-item" href="#">404</a>
-            <a class="dropdown-item" href="#">Pricing Table</a>
-          </div>
-        </li>
-      </ul>
+
+      {% if app.user %}
+            <li class="nav-item">
+
+               <a class="nav-link" href="{{ path('logout') }}">Salir</a>
+            </li>
+            <li class="nav-item">
+
+               <a class="nav-link" href="{{ path('inscripcion')}}">Preinscripción 2020</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sigedu
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" href="#">Cursadas</a>
+                <a class="dropdown-item" href="#">Rendidas</a>
+                <a class="dropdown-item" href="#">ficha o Estado Académico</a>
+                <a class="dropdown-item" href="#">Certificados</a>
+
+              </div>
+            </li>
+      {% else %}
+
+           <li class="nav-item">
+              <a class="nav-link" href="{{ path('login') }}">Login</a>
+           </li>
+     {% endif %}
+
+    </ul>
     </div>
   </div>
 </nav>

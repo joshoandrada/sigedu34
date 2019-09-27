@@ -1,0 +1,38 @@
+{# Plantilla de nuestra aplicacion #}
+{% extends 'base.html.twig' %}
+{% form_theme form 'form/alumnoForm.html.twig' %}
+{% block titulo %}
+Registro
+{% endblock %}
+{# contenido #}
+{% block body %}
+
+<div class="container">
+
+  <!-- Page Heading/Breadcrumbs -->
+  <h1 class="mt-4 mb-3">Sigedu
+    <small>Registro de Usuarios</small>
+  </h1>
+
+  <!-- Intro Content -->
+  <div class="row">
+    <div class="col-lg-6">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+    <div class="col-lg-6">
+      <h2>¿ Para qué Registrarse ?</h2>
+      <p> &nbsp; </p>
+      <p>Con el registro de usuario podrá realizar inscripciones de</p>
+      <p>cursadas y examen en todas las materias hacer un seguimiento</p>
+      <p>de la historia académica del alumno, descargar certificado de</p>
+      <p> alumno regular etc. </p>
+      <p> &nbsp; </p>
+      <p> &nbsp; </p>
+    </div>
+  </div>
+  <!-- /.row -->
+
+</div>
+{% endblock %}

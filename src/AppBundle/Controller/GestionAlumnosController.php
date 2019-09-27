@@ -8,15 +8,27 @@ use Symfony\Component\Routing\Annotation\Route;
 //use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Form\AlumnoType;
 use AppBundle\Entity\alumno;
+use AppBundle\Entity\usuariot;
+
+/**
+ * @Route("/gestionalumno")
+ */
 
 class GestionAlumnosController extends Controller
 {
     /**
-     * @Route("/nuevoalumno", name="nuevoalumno")
+     * @Route("/nuevoalumno/{id}", name="nuevoalumno")
      */
-    public function nuevoAlumnoAction(Request $request)
+    public function nuevoAlumnoAction(Request $request,$id=null)
     {
-      $alumno = new alumno();
+
+      if($id!=null){
+        $alumnoRepository=$this->getDoctrine()->getRepository(alumno::class);
+        $alumno = $alumnoRepository->find($id);
+      }
+      else {
+         $alumno = new alumno();
+      }
       $form = $this->createForm(AlumnoType::class, $alumno);
       // recogemos la informacion
       $form->handleRequest($request);
@@ -24,8 +36,8 @@ class GestionAlumnosController extends Controller
       if ($form->isSubmitted() && $form->isValid()) {
           // rellenar el entity alumno
           $alumno = $form->getData();
-          $alumno -> setTelefono("");
-          $alumno -> setLegajoPrefijo("");
+          //$alumno -> setTelefono("");
+          $alumno -> setLegajoPrefijo("2020");
           $alumno -> setLegajoNumero(0);
           $alumno -> setApellidoMaterno("");
           //$alumno -> setActivo(1);
@@ -42,4 +54,25 @@ class GestionAlumnosController extends Controller
      }
       return $this->render('gestionAlumnos/nuevoAlumno.html.twig',array('form'=>$form->createView()));
     }
+
+    /**
+     * @Route("/inscripcionalumno", name="inscripcion")
+     */
+    public function inscripcionAlumnoAction(Request $request)
+    {
+
+       $user = $this->getUser();
+       //$alu2=$user->getAlumno(getId());
+
+       //$aaa = new usuariot();
+       $mm = $this->getDoctrine()->getEntityManager();
+       //$usua = $mm->getRepository('AppBundle:usuariot')->find($user->getId());
+       $usua = $mm->getRepository('AppBundle:usuariot')->findOneByUsername($user);
+       //$aaa->setAlumno($usua);
+      //var_dump($user);
+       //$alu= 1;
+       //return $this->redirectToRoute('alumno',array('id'=> $alumno->getId()));
+      return $this->redirectToRoute('nuevoalumno',array('id'=> $user->getOrden()));
+      //return $this->redirectToRoute('nuevoalumno',array('id'=>$user->getAlumno()));
+   }
 }

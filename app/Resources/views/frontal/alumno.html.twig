@@ -9,18 +9,42 @@ ISFD Tobar Garcia - Datos alumno
 <div class="container">
 
   <!-- Page Heading/Breadcrumbs -->
-  <h1 class="mt-4 mb-3">Datos Alumno
-    <small>Inscripción</small>
+  <h1 class="mt-4 mb-3">Inscripción
+    <small>de Alumnos</small>
   </h1>
 
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active">Se cargaron Correctamente !!!</li>
+    <li class="breadcrumb-item active">Se cargaron Correctamente los Datos !!!</li>
   </ol>
   <div class="col-md-4">
-    <h6 class="card-subtitle mb-2 text-muted">Nombre</h6>
-    <p>Juan Pablo Carrizo</p>
-    <h6 class="card-subtitle mb-2 text-muted">DNI</h6>
-    <p>34567231</p>
+    <h6 class="card-subtitle mb-2 text-muted">Nombre:</h6>
+    <p><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>{{alumno.nombre}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">Apellido:</h6>
+    <p><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>{{alumno.apellido}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">Dirección:</h6>
+    <p><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>{{alumno.direccion}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">Ciudad:</h6>
+    <p><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>{{alumno.ciudad}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">Fecha de Nacimiento:</h6>
+    <p><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>{{alumno.fechaNacimiento|date("d/m/Y")}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">DNI:</h6>
+    <p><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>{{alumno.nroDocumento}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">Tipo de Documento:</h6>
+    <p><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>{{alumno.tipodocumento}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">telefono:</h6>
+    <p><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>{{alumno.telefono}}</p>
+    {% if alumno.sexo == "f" %}
+    <h6 class="card-subtitle mb-2 text-muted">Sexo:</h6>
+       <p><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>Femenino</p>
+    {% else %}
+    <h6 class="card-subtitle mb-2 text-muted">Sexo:</h6>
+       <p><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>Masculino</p>
+   {% endif %}
+   <h6 class="card-subtitle mb-2 text-muted">Provincia:</h6>
+   <p><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>{{alumno.provincia}}</p>
+   <h6 class="card-subtitle mb-2 text-muted">Observación:</h6>
+   <p><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>{{alumno.observacion}}</p>
+
   </div>
 </div>
 <!-- /.container -->
