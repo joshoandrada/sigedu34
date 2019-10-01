@@ -44,7 +44,7 @@ class provincia
     private $orden;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Pais", inversedBy="provincias")
+     * @ORM\ManyToOne(targetEntity="pais", inversedBy="provincias")
      * @ORM\JoinColumn(name="fk_pais_id", referencedColumnName="id")
      */
     private $pais;

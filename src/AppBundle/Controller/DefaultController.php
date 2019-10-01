@@ -43,6 +43,15 @@ class DefaultController extends Controller
         // , [ 'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, ]
     }
     /**
+     * @Route("/requisitos", name="requisitos")
+     */
+    public function requisitosAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('frontal/requisitos.html.twig');
+        // , [ 'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, ]
+    }
+    /**
      * @Route("/ubicacion", name="ubicacion")
      */
     public function ubicacionAction(Request $request)
